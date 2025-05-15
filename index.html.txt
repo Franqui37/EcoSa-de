@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>EcoSaúde</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      max-width: 600px;
+      margin: 40px auto;
+      padding: 0 15px;
+      background: #e6f2e6;
+      color: #2d572c;
+    }
+    h1 {
+      text-align: center;
+    }
+    ul {
+      list-style: none;
+      padding: 0;
+    }
+    li {
+      background: #a3d49a;
+      margin: 10px 0;
+      padding: 15px;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+    li:hover {
+      background: #7bb76d;
+    }
+    #conteudo {
+      margin-top: 30px;
+      padding: 20px;
+      background: #d9ead3;
+      border-radius: 8px;
+      min-height: 100px;
+    }
+  </style>
+</head>
+<body>
+  <h1>EcoSaúde</h1>
+  <p>Escolha um tema para aprender:</p>
+  <ul id="temas">
+    <li onclick="mostrarConteudo('descarte')">Descarte correto do lixo</li>
+    <li onclick="mostrarConteudo('aguaEnergia')">Economia de água e energia</li>
+    <li onclick="mostrarConteudo('prevencao')">Prevenção de doenças relacionadas ao meio ambiente</li>
+  </ul>
+  <div id="conteudo">
+    <em>Selecione um tema acima para ver o conteúdo.</em>
+  </div>
+
+  <script>
+    const conteudos = {
+      descarte:
+        'O descarte correto do lixo evita contaminação do solo e da água, preservando a saúde da comunidade.',
+      aguaEnergia:
+        'Economizar água e energia ajuda a preservar recursos naturais e reduzir impactos ambientais.',
+      prevencao:
+        'Praticar hábitos saudáveis e cuidar do ambiente diminui riscos de doenças transmitidas pela água e pelo ar.'
+    };
+
+    function mostrarConteudo(tema) {
+      const divConteudo = document.getElementById('conteudo');
+      divConteudo.textContent = conteudos[tema] || 'Conteúdo não disponível.';
+    }
+  </script>
+</body>
+</html>
